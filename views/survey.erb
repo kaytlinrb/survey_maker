@@ -1,0 +1,23 @@
+<div class="container">
+  <button type="button"><a href="/">Go Home</a></button>
+  <h2> <%= @survey.survey_title() %> </h2>
+  <button type="button"><a href="/survey/<%= @survey.id %>/edit">Edit Survey Name</a></button>
+
+</div>
+<div class="container">
+
+  <% if @survey.questions.any?()  %>
+  <h2>Questions:</h2>
+  <h5>click to edit</h5>
+  <ul>
+    <% @survey.questions.each() do |question|  %>
+    <li><a href="/questions/<%= question.id() %>"><%=  question.question_description() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+        <h2>No Questions added yet!</h2>
+    <% end %>
+
+
+  <button type="button" name="button"><a href="/survey/<%= @survey.id() %>/questions/new">Add a question</a></button>
+</div>

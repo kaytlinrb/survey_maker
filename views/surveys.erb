@@ -1,0 +1,15 @@
+<div class="well">
+
+<% if @surveys.any?()  %>
+<h2>Your Surveys:</h2>
+<ul>
+  <% @surveys.each() do |survey|  %>
+  <li><a href="/surveys/<%= survey.id() %>"> <%=  survey.survey_title() %></a></li>
+  <% end %>
+</ul>
+<% else %>
+      <h2>No Surveys added yet!</h2>
+  <% end %>
+
+
+</div>

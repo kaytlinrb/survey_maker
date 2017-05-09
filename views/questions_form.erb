@@ -1,0 +1,7 @@
+<h1>New Question</h1>
+
+<form action="/survey/<%= @survey.id() %>/question/return" method="post">
+  <label for="question_input">Enter Survey Question:</label>
+  <input name="question_input" id="question_input">
+  <button type="submit">Submit</button>
+</form>
